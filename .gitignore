@@ -1,5 +1,14 @@
 # Created by https://www.gitignore.io/api/f#,linux,windows,macos,vim,emacs,visualstudio,visualstudiocode
 
+**/FAKE/
+**/packages/
+**/bin/
+**/debug/
+**/build/
+**/.paket
+**/.fake
+paket.lock
+
 ### F# ###
 lib/debug
 lib/release
