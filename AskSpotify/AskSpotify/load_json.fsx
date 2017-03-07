@@ -14,3 +14,6 @@ let specificArtist = artistRequest.Artists.Items
 match specificArtist with
     | Some art -> printfn "%s %s %d" art.Name art.Id art.Order
     | None -> printfn "No artist found"
+
+let html = Http.RequestString ("https://api.spotify.com/v1/search/", query=["q", "Muse"; "type", "artist"], httpMethod="GET" )
+let test = ArtistJson.Parse(html)
