@@ -18,5 +18,5 @@ module CommonItems =
 
     let GetAlbumDetail artistId =
         let request = sprintf "https://api.spotify.com/v1/artists/%s/albums" artistId
-        Http.RequestString (request, httpMethod="GET", headers = [ "Accept", "application/json" ] )
+        Http.RequestString (request, query=["album_type", "album"], httpMethod="GET", headers = [ "Accept", "application/json" ] )
     
