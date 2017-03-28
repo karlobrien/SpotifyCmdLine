@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Name>AskSpotify</Name>
@@ -45,6 +45,7 @@
     <Compile Include="CommonLibrary.fs" />
     <Compile Include="ParseSpotifyResponse.fs" />
     <None Include="App.config" />
+    <Compile Include="Cli.fs" />
     <Compile Include="AskSpotify.fs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
