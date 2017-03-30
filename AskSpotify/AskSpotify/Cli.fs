@@ -6,6 +6,8 @@ open FSharp.Data
 open Library.CommonItems
 open Library.Parse
 
+//Inspired by https://sidburn.github.io/blog/2016/04/11/optionals
+
 module CLI = 
     type Command = 
         | ArtistInfo
