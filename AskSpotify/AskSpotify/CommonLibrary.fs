@@ -10,13 +10,13 @@ module CommonItems =
 
     let searchApi = "https://api.spotify.com/v1/search?q=Muse&type=artist&market=US"
 
-    let GetArtistDetails(name: string) =
+    let RawCallForArtist(name: string) =
         let html = Http.RequestString ("https://api.spotify.com/v1/search/", query=["q", name; "type", "artist"], httpMethod="GET", headers = [ "Accept", "application/json" ])
         html
     
     type AlbumJson = JsonProvider<"album.json", EmbeddedResource="AskSpotify, album.json">
 
-    let GetAlbumDetail artistId =
+    let RawCallForAlbum artistId =
         let request = sprintf "https://api.spotify.com/v1/artists/%s/albums" artistId
-        Http.RequestString (request, query=["album_type", "album"], httpMethod="GET", headers = [ "Accept", "application/json" ] )
+        Http.RequestString (request, query=["album_type", "album"; "market", "GR"], httpMethod="GET", headers = [ "Accept", "application/json" ] )
     

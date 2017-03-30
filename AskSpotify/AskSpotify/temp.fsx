@@ -10,14 +10,15 @@ open Library.CLI
 open Library.CommonItems
 open Library.Parse
 
-let input = stdin.ReadLine()
-let result = GetArtistID input
+//let input = stdin.ReadLine()
+//executeCommand ArtistInfo input
+//executeCommand ArtistAlbums input
 
-match result with
-    | Some art -> 
-        printfn "%s %s %d %s" art.Name art.Id art.Followers art.Url
-        GetAlbumData art |> printfn "%A"
-    | None -> printfn "No artist found"
+let main =
+    let rec loop =
+        printf "Command: "
+        stdin.ReadLine() |> executeCommand ArtistAlbums
+    loop
+    ()
 
-let test = executeCommand ArtistInfo input
-test |> Option.map (fun x -> printfn "%s %d %s" x.Id x.Followers x.Url)
+main
